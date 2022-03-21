@@ -1,0 +1,89 @@
+.embed {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+#calculadora {
+  font-size: 22px;
+  font-family: "Lato";
+  padding: 40px;
+  background-color: #ffeedb;
+}
+
+#explicação {
+  font-family: "Lato";
+  font-size: 1rem;
+  text-align: center;
+}
+
+#titulo{
+  font-family: "Lato";
+  text-align: center;
+
+}
+a {
+  color: #4ACC82;
+}
+a:hover {
+  color: #338e5b;
+}
+
+body, html {
+  padding:0;
+  margin:0;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+
+}
+
+#cartMe {
+  position: relative;
+  left:100px;
+  top:120px;
+}
+.cart {
+    width:300px;
+    height:510px;
+    position:relative;
+    &-front, &-back {
+        width:100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right:0;
+
+        &:after {
+            width:100%;
+            position:absolute;
+            margin-top:-100%;
+            padding-bottom:100%;
+            content:'';
+            background-position: center;
+            background-size: 100%;
+            background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/364243/cart-front-v1.png");
+
+        }
+
+    }
+
+    &-back {
+        &:after {
+            background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/364243/cart-back-v1.png");
+        }
+    }
+
+    &-money {
+        position: absolute;
+        top:0;
+        left:13%;
+        right:13%;
+        bottom:30%;
+    }
+}
+
+.bill {
+    position: absolute;
+}

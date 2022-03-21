@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Newsapp sobre os gastos mensais de um jovem</title>
+
+	<!-- Tangle -->
+	<script type="text/javascript" src="Tangle.js"></script>
+
+	<!-- TangleKit (optional) -->
+	<link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script type="text/javascript" src="TangleKit/mootools.js"></script>
+	<script type="text/javascript" src="TangleKit/sprintf.js"></script>
+	<script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
+	<script type="text/javascript" src="TangleKit/TangleKit.js"></script>
+
+</head>
+
+
+ <div class="row embed">
+	<div id="calculadora">
+		<h1 id="titulo" >Gastos mensais de um jovem</h1>
+        <p id="explicação">
+          (Arraste os números a verde para fazer uma estimativa dos gastos mensais de um jovem estudante)
+        </p>
+        <script type="text/javascript">
+
+          function setUpTangle() {
+
+            var element = document.getElementById("example");
+
+            var tangle = new Tangle(element, {
+              initialize: function () {
+                this.renda = 250;
+                this.despesas = 30;
+                this.transportes = 15;
+                this.npropinas = 65
+                this.fotocopias =10
+                this.alimentacao =100
+              },
+
+              update: function () {
+                this.resultado = this.renda + this.despesas + this.npropinas + this.transportes +this.fotocopias +this.alimentacao
+              }
+            });
+          }
+
+        </script>
+
+        <body onload="setUpTangle();">
+
+          <p id="example">
+            Um jovem paga <span data-var="renda" class="TKAdjustableNumber" data-min="100"
+              data-max="2000"> euros de renda</span>. Para além da renda, o jovem paga <span
+              data-var="despesas"
+              class="TKAdjustableNumber" dat-min="5" data-max="1000"> euros de despesas (água, luz, gás e internet)</span>.  Para a alimentação, gasta <span data-var="alimentacao" class="TKAdjustableNumber" data-min="15" data-max="500"> euros</span>. Em transportes gasta <span data-var="transportes" class="TKAdjustableNumber" data-min="15" data-max="500"> euros</span>. Em propinas gasta <span data-var="npropinas"  class="TKAdjustableNumber" dat-min="65" data-max="4000"> euros</span>, precisando de gastar mais <span
+              data-var="fotocopias"class="TKAdjustableNumber" dat-min="0" data-max="4000"> euros em fotocópias e livros</span>. O jovem precisa de ter </span>
+            <span data-var="resultado" class="resultado"></span> euros de rendimento mensal.
+          </p>
+ 
+</body>
+</div>
+
+</div>
+
+ 
+
+</html>
